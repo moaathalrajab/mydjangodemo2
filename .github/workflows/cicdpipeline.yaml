@@ -4,8 +4,8 @@ on:
   push:
     branches:
       - main
-
-build:
+jobs:
+  build-test-deploy:
     runs-on: ubuntu-latest
 
     steps:
@@ -26,6 +26,7 @@ build:
         run: |
           python manage.py test
 
-       - name: Deployment
+      - name: Deploy to server
         run: |
-          echo "Deployment step goes here" 
+          # Add your deployment commands here
+          echo "Deploying to server..."
